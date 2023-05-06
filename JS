@@ -1,0 +1,15 @@
+// Verifica se a senha e a confirmação de senha são iguais
+function validarSenha() {
+	var senha = document.getElementById("senha");
+	var confirmaSenha = document.getElementById("confirma-senha");
+
+	if (senha.value != confirmaSenha.value) {
+		confirmaSenha.setCustomValidity("As senhas não coincidem.");
+	} else {
+		confirmaSenha.setCustomValidity("");
+	}
+}
+
+// Adiciona o listener para verificar a validação das senhas ao mudar o valor
+document.getElementById("senha").onchange = validarSenha;
+document.getElementById("confirma-senha").onkeyup = validarSenha;
